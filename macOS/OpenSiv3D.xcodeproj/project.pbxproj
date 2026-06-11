@@ -1433,6 +1433,8 @@
 		2CC8BD0E28C75331008C770A /* Siv3DEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2CC8B98128C7532D008C770A /* Siv3DEngine.hpp */; };
 		2CC8BD0F28C75331008C770A /* Siv3DComponent.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2CC8B98228C7532D008C770A /* Siv3DComponent.hpp */; };
 		2CC8BD1028C75331008C770A /* Siv3DEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8B98328C7532D008C770A /* Siv3DEngine.cpp */; };
+		2CFA100128B0000000000001 /* MainRuntime.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2CFA100328B0000000000001 /* MainRuntime.hpp */; };
+		2CFA100228B0000000000001 /* SivMainRuntime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA100428B0000000000001 /* SivMainRuntime.cpp */; };
 		2CC8BD1128C75331008C770A /* CUserAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8B98528C7532D008C770A /* CUserAction.cpp */; };
 		2CC8BD1228C75331008C770A /* UserActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8B98628C7532D008C770A /* UserActionFactory.cpp */; };
 		2CC8BD1328C75331008C770A /* IUserAction.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2CC8B98728C7532D008C770A /* IUserAction.hpp */; };
@@ -3537,6 +3539,7 @@
 		2CC8B51628C752ED008C770A /* IntFormatter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IntFormatter.hpp; sourceTree = "<group>"; };
 		2CC8B51728C752ED008C770A /* AssetHandle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AssetHandle.hpp; sourceTree = "<group>"; };
 		2CC8B51828C752ED008C770A /* EngineOptions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EngineOptions.hpp; sourceTree = "<group>"; };
+		2CFA100328B0000000000001 /* MainRuntime.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainRuntime.hpp; sourceTree = "<group>"; };
 		2CC8B51928C752ED008C770A /* Platform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Platform.hpp; sourceTree = "<group>"; };
 		2CC8B51A28C752ED008C770A /* Polygon.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Polygon.hpp; sourceTree = "<group>"; };
 		2CC8B51B28C752ED008C770A /* Bezier3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bezier3.hpp; sourceTree = "<group>"; };
@@ -4500,6 +4503,7 @@
 		2CC8B98128C7532D008C770A /* Siv3DEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Siv3DEngine.hpp; sourceTree = "<group>"; };
 		2CC8B98228C7532D008C770A /* Siv3DComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Siv3DComponent.hpp; sourceTree = "<group>"; };
 		2CC8B98328C7532D008C770A /* Siv3DEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Siv3DEngine.cpp; sourceTree = "<group>"; };
+		2CFA100428B0000000000001 /* SivMainRuntime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SivMainRuntime.cpp; sourceTree = "<group>"; };
 		2CC8B98528C7532D008C770A /* CUserAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CUserAction.cpp; sourceTree = "<group>"; };
 		2CC8B98628C7532D008C770A /* UserActionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserActionFactory.cpp; sourceTree = "<group>"; };
 		2CC8B98728C7532D008C770A /* IUserAction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IUserAction.hpp; sourceTree = "<group>"; };
@@ -8154,6 +8158,7 @@
 				2CC8B63828C752ED008C770A /* Endian.hpp */,
 				2CC8B46A28C752EC008C770A /* EngineLog.hpp */,
 				2CC8B51828C752ED008C770A /* EngineOptions.hpp */,
+				2CFA100328B0000000000001 /* MainRuntime.hpp */,
 				2CC8B68B28C752EE008C770A /* EnvironmentVariable.hpp */,
 				2CC8B53628C752ED008C770A /* Error.hpp */,
 				2CC8B55B28C752ED008C770A /* Exif.hpp */,
@@ -9007,6 +9012,7 @@
 				2CC8B76E28C7532D008C770A /* LineString */,
 				2CC8B79D28C7532D008C770A /* Logger */,
 				2CC8B9CC28C7532D008C770A /* ManagedScript */,
+				2CFA100528B0000000000001 /* MainRuntime */,
 				2CC8B97E28C7532D008C770A /* Mat3x2 */,
 				2CC8B9B328C7532D008C770A /* Mat3x3 */,
 				2CC8BA9D28C7532E008C770A /* Mat4x4 */,
@@ -10982,6 +10988,14 @@
 				2CC8B9CF28C7532D008C770A /* ManagedScriptDetail.hpp */,
 			);
 			path = ManagedScript;
+			sourceTree = "<group>";
+		};
+		2CFA100528B0000000000001 /* MainRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				2CFA100428B0000000000001 /* SivMainRuntime.cpp */,
+			);
+			path = MainRuntime;
 			sourceTree = "<group>";
 		};
 		2CC8B9D028C7532D008C770A /* Window */ = {
@@ -13086,6 +13100,7 @@
 				2CEFB68E2AB858DD005EBD5F /* SkPathOpsTSect.h in Headers */,
 				2C6C658329C16F1A009298ED /* smtp-address-validator.hpp in Headers */,
 				2CC8BD4328C75331008C770A /* ManagedScriptDetail.hpp in Headers */,
+				2CFA100128B0000000000001 /* MainRuntime.hpp in Headers */,
 				2C28E97C2796816D0004E07D /* zstd_deps.h in Headers */,
 				2C3796E62B25DCC9003B1640 /* allocations.h in Headers */,
 				2CC584872648246900C33E9F /* vorbisenc.h in Headers */,
@@ -14647,6 +14662,7 @@
 				2CC8BCB728C75330008C770A /* ScriptWave.cpp in Sources */,
 				2CC8BB5F28C7532F008C770A /* OpusDecoder.cpp in Sources */,
 				2CC8BD1028C75331008C770A /* Siv3DEngine.cpp in Sources */,
+				2CFA100228B0000000000001 /* SivMainRuntime.cpp in Sources */,
 				2CBEBCB52629D15F0077DDBF /* identify.c in Sources */,
 				2CB18EE126B5A68700862C28 /* as_scriptobject.cpp in Sources */,
 				2CC8BD9C28C75332008C770A /* SivEllipse.cpp in Sources */,

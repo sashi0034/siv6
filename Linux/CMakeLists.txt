@@ -55,7 +55,7 @@ elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     set(SIV3D_CXX_FLAGS_WITH_COMPILER -fdiagnostics-color=always)
 endif()
 
-if (NOT CMAKE_CONFIGURATION_TYPES AND 
+if (NOT CMAKE_CONFIGURATION_TYPES AND
     NOT CMAKE_NO_BUILD_TYPE AND
     NOT CMAKE_BUILD_TYPE AND
     CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
@@ -234,6 +234,7 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/Siv3D/CommandLine/SivCommandLine.cpp
   ../Siv3D/src/Siv3D/Common/Siv3DEngine.cpp
   ../Siv3D/src/Siv3D/Compression/SivCompression.cpp
+  ../Siv3D/src/Siv3D/MainRuntime/SivMainRuntime.cpp
   ../Siv3D/src/Siv3D/Cone/SivCone.cpp
   ../Siv3D/src/Siv3D/Console/ConsoleFactory.cpp
   ../Siv3D/src/Siv3D/Console/SivConsole.cpp
@@ -328,7 +329,7 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/Siv3D/ImageDecoder/SivImageDecoder.cpp
   ../Siv3D/src/Siv3D/ImageEncoder/CImageEncoder.cpp
   ../Siv3D/src/Siv3D/ImageEncoder/ImageEncoderFactory.cpp
-  ../Siv3D/src/Siv3D/ImageEncoder/SivImageEncoder.cpp 
+  ../Siv3D/src/Siv3D/ImageEncoder/SivImageEncoder.cpp
   ../Siv3D/src/Siv3D/ImageFormat/BMP/BMPDecoder.cpp
   ../Siv3D/src/Siv3D/ImageFormat/BMP/BMPEncoder.cpp
   ../Siv3D/src/Siv3D/ImageFormat/GIF/GIFDecoder.cpp
@@ -720,7 +721,7 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/Siv3D/TextureFormat/SivTextureFormat.cpp
   ../Siv3D/src/Siv3D/TextureRegion/SivTextureRegion.cpp
   ../Siv3D/src/Siv3D/TextWriter/SivTextWriter.cpp
-  ../Siv3D/src/Siv3D/TextWriter/TextWriterDetail.cpp  
+  ../Siv3D/src/Siv3D/TextWriter/TextWriterDetail.cpp
   ../Siv3D/src/Siv3D/Threading/SivThreading.cpp
   ../Siv3D/src/Siv3D/TimeProfiler/SivTimeProfiler.cpp
   ../Siv3D/src/Siv3D/Timer/SivTimer.cpp
@@ -876,7 +877,7 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/ThirdParty/easyexif/exif.cpp
 
   ../Siv3D/src/ThirdParty/fmt/format.cc
-  
+
   ../Siv3D/src/ThirdParty/GLEW/glew.c
   ../Siv3D/src/ThirdParty/GLFW/context.c
   ../Siv3D/src/ThirdParty/GLFW/egl_context.c
@@ -1297,7 +1298,7 @@ target_link_libraries(Siv3D INTERFACE
   ${CMAKE_DL_LIBS}
 )
 target_compile_features(Siv3D PRIVATE cxx_std_20 c_std_11)
-target_include_directories(Siv3D 
+target_include_directories(Siv3D
   PRIVATE
     $<BUILD_INTERFACE: ${SIV3D_INTERNAL_INCLUDE_DIRS}>
     $<BUILD_INTERFACE: ${SIV3D_THIRD_PARTY_INCLUDE_DIRS}>

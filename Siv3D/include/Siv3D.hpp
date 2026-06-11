@@ -13,10 +13,10 @@
 //	to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
 //	copies of the Software, and to permit persons to whom the Software is
 //	furnished to do so, subject to the following conditions :
-//	
+//
 //	The above copyright notice and this permission notice shall be included in
 //	all copies or substantial portions of the Software.
-//	
+//
 //	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
@@ -27,7 +27,7 @@
 //
 //----------------------------------------------------------------------------------------
 
-# pragma once 
+# pragma once
 // ^^^ include guard
 
 # define SIV3D_INCLUDED
@@ -393,10 +393,10 @@
 // ファイルとディレクトリの変更の監視 | Directory watcher
 # include <Siv3D/DirectoryWatcher.hpp>
 
-// 所有権を持たない、メモリ範囲への IReader インタフェース | IReader Wrapper for Non-Owning Memory Range 
+// 所有権を持たない、メモリ範囲への IReader インタフェース | IReader Wrapper for Non-Owning Memory Range
 # include <Siv3D/MemoryViewReader.hpp>
 
-// メモリ範囲への IReader インタフェース | IReader Wrapper for Memory Range 
+// メモリ範囲への IReader インタフェース | IReader Wrapper for Memory Range
 # include <Siv3D/MemoryReader.hpp>
 
 // メモリマップトファイル | Memory mapped file
@@ -426,7 +426,7 @@
 // MD5 ハッシュ値 | MD5 hash value
 # include <Siv3D/MD5Value.hpp>
 
-// MD5 エンコード | MD5 Encode 
+// MD5 エンコード | MD5 Encode
 # include <Siv3D/MD5.hpp>
 
 // 暗号化 | Encryption
@@ -1364,7 +1364,7 @@
 // デッドゾーン | Deadzone
 # include <Siv3D/DeadZone.hpp>
 
-// XInput コントローラの振動 | XInput controller vibration 
+// XInput コントローラの振動 | XInput controller vibration
 # include <Siv3D/XInputVibration.hpp>
 
 // XInput コントローラ | XInput controller
@@ -1879,6 +1879,9 @@
 //　エンジンの設定 | Engine configuration
 # include <Siv3D/EngineOptions.hpp>
 
+//	Main() に依存しない実行環境 | Runtime environment independent of Main()
+# include <Siv3D/MainRuntime.hpp>
+
 //////////////////////////////////////////////////
 //
 //	実験的なライブラリ | Experimental Libraries
@@ -1898,7 +1901,7 @@
 
 # if !defined(SIV3D_LIBRARY_BUILD) && SIV3D_PLATFORM(WINDOWS)
 
-	// Windows + MSVC 用の静的リンクライブラリ | Static link libraries for Windows + MSVC 
+	// Windows + MSVC 用の静的リンクライブラリ | Static link libraries for Windows + MSVC
 	# include <Siv3D/Windows/Libraries.hpp>
 
 # endif

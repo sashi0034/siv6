@@ -25,6 +25,9 @@
     <Filter Include="src\Siv3D\Common">
       <UniqueIdentifier>{c7cb0422-51f3-411e-9438-6756a006f35d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Siv3D\MainRuntime">
+      <UniqueIdentifier>{5a713a19-6f8d-4e7d-a625-6d12dd79d4ad}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Siv3D\Console">
       <UniqueIdentifier>{8383c205-cd97-444a-a17c-062e652fc324}</UniqueIdentifier>
     </Filter>
@@ -1852,6 +1855,9 @@
       <Filter>include\Siv3D</Filter>
     </ClInclude>
     <ClInclude Include="..\Siv3D\include\Siv3D\EngineOptions.hpp">
+      <Filter>include\Siv3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\include\Siv3D\MainRuntime.hpp">
       <Filter>include\Siv3D</Filter>
     </ClInclude>
     <ClInclude Include="..\Siv3D\include\Siv3D\Array.hpp">
@@ -7420,6 +7426,9 @@
   <ItemGroup>
     <ClCompile Include="..\Siv3D\src\Siv3D\Common\Siv3DEngine.cpp">
       <Filter>src\Siv3D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\MainRuntime\SivMainRuntime.cpp">
+      <Filter>src\Siv3D\MainRuntime</Filter>
     </ClCompile>
     <ClCompile Include="..\Siv3D\src\Siv3D\Console\ConsoleFactory.cpp">
       <Filter>src\Siv3D\Console</Filter>
