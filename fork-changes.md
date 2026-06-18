@@ -22,3 +22,9 @@ void UseSiv3DFromHost()
 ```
 
 現在は `EngineOption::Renderer::Headless` の場合のみ対応しています。
+
+## Ubuntu 24.04 対応
+
+Ubuntu 24.04 のビルドエラーを修正。
+
+`Platform.hpp` の `SIV3D_INTRINSIC(SSE)` 判定で `__SSE4_2__` 要求していた。しかし、`Linux/CMakeLists.txt` では `-msse4.1` に設定されていたので `-msse4.2` に修正した。
