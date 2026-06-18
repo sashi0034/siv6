@@ -28,3 +28,7 @@ void UseSiv3DFromHost()
 Ubuntu 24.04 のビルドエラーを修正。
 
 `Platform.hpp` の `SIV3D_INTRINSIC(SSE)` 判定で `__SSE4_2__` 要求していた。しかし、`Linux/CMakeLists.txt` では `-msse4.1` に設定されていたので `-msse4.2` に修正した。
+
+# Image::paint() の SSE 実装のバグを修正
+
+`Image::paint` 内の `Paint_SSE4_1()` でクラッシュする問題を修正。
