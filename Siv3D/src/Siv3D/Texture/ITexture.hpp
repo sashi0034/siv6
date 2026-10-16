@@ -23,7 +23,7 @@ namespace s3d
 		{
 			std::shared_ptr<Texture::AssetIDWrapperType> textureHandle;
 
-			Rect textureRegion{ 0 };
+			Rect textureRegion{};
 		};
 	}
 
