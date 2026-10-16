@@ -28,12 +28,11 @@ void UseSiv3DFromHost()
 
 Ubuntu 24.04 のビルドエラーを修正。
 
-`Platform.hpp` の `SIV3D_INTRINSIC(SSE)` 判定で `__SSE4_2__` 要求していた。しかし、`Linux/CMakeLists.txt` では `-msse4.1` に設定されていたので `-msse4.2` に修正した。
-
+`Platform.hpp` の `SIV3D_INTRINSIC(SSE)` 判定で `__SSE4_2__` 要求していた。しかし、`Linux/CMakeLists.txt` では `-msse4.1` に設定されていたので `-msse4.2` に修正しました
 
 ## Image::paint() の SSE 実装のバグを修正
 
-`Image::paint` 内の `Paint_SSE4_1()` でクラッシュする問題を修正。
+`Image::paint` 内の `Paint_SSE4_1()` でクラッシュする問題を修正しました。
 
 
 ## Texture::atlas()
@@ -45,9 +44,12 @@ const TextureRegion region = texture.atlas(Point{ 32, 16 }, Size{ 16, 16 });
 region.draw();
 ```
 
-- 現在のネイティブ実装は D3D11 のみです。未対応バックエンドでは通常の `TextureRegion` を返します。
+補足
+
+- `Graphics2D::ClearTextureAtlasCache()` で現在のアトラスキャッシュを消去できます。以前のアトラスから作られた `TextureRegion` は有効なままで、古いアトラスページは参照されなくなった時点で解放されます。
+- 現在のネイティブ実装は D3D11 のみです。
 - D3D11 では 2048×2048 の固定ページへ領域を配置し、ページが満杯になると次のページを作成します。
-- 各領域の四辺には端のピクセルを複製した 1 ピクセルの余白を設けます。
+- 各領域の周囲 1 ピクセルに、最寄りの端のピクセルを複製したパディングを設けます。
 - GPU へのコピーは 2D 描画の flush 直前にまとめて実行します。
-- 同じ Texture ID と `Rect` の組み合わせはエンジン終了までキャッシュされます。
+- 同じ Texture ID と `Rect` の組み合わせは、キャッシュの消去またはエンジン終了まで再利用されます。
 - DynamicTexture、RenderTexture、MSRenderTexture、範囲外または大きすぎる領域はアトラス化せず、通常の `TextureRegion` にフォールバックします。

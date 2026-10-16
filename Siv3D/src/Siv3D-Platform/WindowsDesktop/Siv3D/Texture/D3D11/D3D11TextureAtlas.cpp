@@ -150,6 +150,13 @@ namespace s3d
 		return result;
 	}
 
+	void D3D11TextureAtlas::clear()
+	{
+		m_pendingCopies.clear();
+		m_cache.clear();
+		m_pages.clear();
+	}
+
 	void D3D11TextureAtlas::flush()
 	{
 		if (m_pendingCopies.isEmpty())

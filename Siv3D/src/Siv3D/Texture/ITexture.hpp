@@ -61,6 +61,8 @@ namespace s3d
 
 		virtual detail::TextureAtlasRegionData getAtlasRegion(const Texture& texture, const Rect& textureRegion) = 0;
 
+		virtual void clearAtlasCache() {}
+
 		virtual void release(Texture::IDType handleID) = 0;
 
 		virtual Size getSize(Texture::IDType handleID) = 0;

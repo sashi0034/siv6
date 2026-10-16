@@ -13,6 +13,7 @@
 # include <Siv3D/Scene.hpp>
 # include <Siv3D/TextStyle.hpp>
 # include <Siv3D/Renderer2D/IRenderer2D.hpp>
+# include <Siv3D/Texture/ITexture.hpp>
 # include <Siv3D/Common/Siv3DEngine.hpp>
 
 namespace s3d
@@ -129,6 +130,12 @@ namespace s3d
 		void Flush()
 		{
 			SIV3D_ENGINE(Renderer2D)->flush();
+		}
+
+		void ClearTextureAtlasCache()
+		{
+			SIV3D_ENGINE(Renderer2D)->flush();
+			SIV3D_ENGINE(Texture)->clearAtlasCache();
 		}
 
 		void DrawTriangles(const uint32 count)

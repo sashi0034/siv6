@@ -76,6 +76,8 @@ namespace s3d
 
 		detail::TextureAtlasRegionData getAtlasRegion(const Texture& texture, const Rect& textureRegion) override;
 
+		void clearAtlasCache() override;
+
 		void flushAtlasUploads();
 
 		void release(Texture::IDType handleID) override;

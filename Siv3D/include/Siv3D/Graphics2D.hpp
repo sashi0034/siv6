@@ -121,6 +121,10 @@ namespace s3d
 		/// @remark `MSRenderTexture` のリゾルブ前に必要です。
 		void Flush();
 
+		/// @brief テクスチャアトラスのキャッシュを消去します。
+		/// @remark 以前のアトラスから作られた TextureRegion は引き続き利用することもできます。
+		void ClearTextureAtlasCache();
+
 		/// @brief 頂点情報を設定せずに 2D 三角形を描画します。
 		/// @remark 頂点シェーダを使って、各三角形に適切な頂点情報を与える必要があります。
 		/// @param count 描画する三角形の個数

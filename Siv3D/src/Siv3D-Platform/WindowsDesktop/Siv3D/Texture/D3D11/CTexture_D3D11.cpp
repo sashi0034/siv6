@@ -335,6 +335,11 @@ namespace s3d
 		return m_atlas->getRegion(texture, textureRegion);
 	}
 
+	void CTexture_D3D11::clearAtlasCache()
+	{
+		m_atlas->clear();
+	}
+
 	void CTexture_D3D11::flushAtlasUploads()
 	{
 		m_atlas->flush();

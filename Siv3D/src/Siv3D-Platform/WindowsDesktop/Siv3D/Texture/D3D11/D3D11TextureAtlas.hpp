@@ -89,6 +89,8 @@ namespace s3d
 		[[nodiscard]]
 		detail::TextureAtlasRegionData getRegion(const Texture& source, const Rect& sourceRegion);
 
+		void clear();
+
 		void flush();
 	};
 }
