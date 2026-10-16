@@ -24,7 +24,7 @@ namespace s3d
 	{
 	private:
 
-		static constexpr Size AtlasSize{ 2048, 2048 };
+		static constexpr Size AtlasSize{ 4096, 4096 };
 
 		static constexpr int32 Padding = 1;
 
