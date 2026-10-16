@@ -305,6 +305,11 @@ namespace s3d
 		return m_textures.add(std::move(texture), info);
 	}
 
+	detail::TextureAtlasRegionData CTexture_GLES3::getAtlasRegion(const Texture&, const Rect&)
+	{
+		return {};
+	}
+
 	void CTexture_GLES3::release(const Texture::IDType handleID)
 	{
 		m_textures.erase(handleID);

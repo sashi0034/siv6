@@ -17,6 +17,7 @@
 # include <Siv3D/EngineLog.hpp>
 # include <Siv3D/Common/Siv3DEngine.hpp>
 # include <Siv3D/Texture/TextureCommon.hpp>
+# include "D3D11TextureAtlas.hpp"
 
 namespace s3d
 {
@@ -29,6 +30,7 @@ namespace s3d
 	{
 		LOG_SCOPED_TRACE(U"CTexture_D3D11::~CTexture_D3D11()");
 
+		m_atlas.reset();
 		m_textures.destroy();
 	}
 
@@ -99,6 +101,8 @@ namespace s3d
 			// 管理に登録
 			m_textures.setNullData(std::move(nullTexture));
 		}
+
+		m_atlas = std::make_unique<D3D11TextureAtlas>(m_device, m_context, m_textures);
 	}
 
 	void CTexture_D3D11::updateAsyncTextureLoad(const size_t)
@@ -324,6 +328,16 @@ namespace s3d
 
 		const String info = U"(type: MSRender, size:{0}x{1}, format: {2})"_fmt(size.x, size.y, texture->getDesc().format.name());
 		return m_textures.add(std::move(texture), info);
+	}
+
+	detail::TextureAtlasRegionData CTexture_D3D11::getAtlasRegion(const Texture& texture, const Rect& textureRegion)
+	{
+		return m_atlas->getRegion(texture, textureRegion);
+	}
+
+	void CTexture_D3D11::flushAtlasUploads()
+	{
+		m_atlas->flush();
 	}
 
 	void CTexture_D3D11::release(const Texture::IDType handleID)

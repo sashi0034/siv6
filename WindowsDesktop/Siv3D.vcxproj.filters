@@ -2547,6 +2547,12 @@
     <ClInclude Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11\CTexture_D3D11.hpp">
       <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11</Filter>
     </ClInclude>
+    <ClInclude Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11\D3D11TextureAtlas.hpp">
+      <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11\D3D11TextureAtlasAllocator.hpp">
+      <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11</Filter>
+    </ClInclude>
     <ClInclude Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Renderer\D3D11\BackBuffer\D3D11InternalTexture2D.hpp">
       <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Renderer\D3D11\BackBuffer</Filter>
     </ClInclude>
@@ -7929,6 +7935,9 @@
       <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture</Filter>
     </ClCompile>
     <ClCompile Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11\CTexture_D3D11.cpp">
+      <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11\D3D11TextureAtlas.cpp">
       <Filter>src\Siv3D-Platform\WindowsDesktop\Siv3D\Texture\D3D11</Filter>
     </ClCompile>
     <ClCompile Include="..\Siv3D\src\Siv3D-Platform\WindowsDesktop\Siv3D\Renderer\D3D11\BackBuffer\D3D11InternalTexture2D.cpp">

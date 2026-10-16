@@ -55,6 +55,8 @@ namespace s3d
 
 		Texture::IDType createMSRT(const Size& size, const TextureFormat& format, HasDepth hasDepth, HasMipMap hasMipMap) override;
 
+		detail::TextureAtlasRegionData getAtlasRegion(const Texture& texture, const Rect& textureRegion) override;
+
 		void release(Texture::IDType handleID) override;
 
 		Size getSize(Texture::IDType handleID) override;

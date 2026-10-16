@@ -1074,6 +1074,8 @@ namespace s3d
 
 		m_commandManager.flush();
 
+		pTexture->flushAtlasUploads();
+
 		m_context->IASetInputLayout(m_inputLayout.Get());
 		pShader->setConstantBufferVS(0, m_vsConstants2D.base());
 		pShader->setConstantBufferPS(0, m_psConstants2D.base());

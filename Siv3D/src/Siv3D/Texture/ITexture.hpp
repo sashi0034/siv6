@@ -10,11 +10,23 @@
 //-----------------------------------------------
 
 # pragma once
+# include <memory>
 # include <Siv3D/Common.hpp>
 # include <Siv3D/Texture.hpp>
+# include <Siv3D/Rect.hpp>
 
 namespace s3d
 {
+	namespace detail
+	{
+		struct TextureAtlasRegionData
+		{
+			std::shared_ptr<Texture::AssetIDWrapperType> textureHandle;
+
+			Rect textureRegion{ 0 };
+		};
+	}
+
 	class SIV3D_NOVTABLE ISiv3DTexture
 	{
 	public:
@@ -46,6 +58,8 @@ namespace s3d
 		virtual Texture::IDType createRT(const Grid<Float4>& image, HasDepth hasDepth, HasMipMap hasMipMap) = 0;
 
 		virtual Texture::IDType createMSRT(const Size& size, const TextureFormat& format, HasDepth hasDepth, HasMipMap hasMipMap) = 0;
+
+		virtual detail::TextureAtlasRegionData getAtlasRegion(const Texture& texture, const Rect& textureRegion) = 0;
 
 		virtual void release(Texture::IDType handleID) = 0;
 

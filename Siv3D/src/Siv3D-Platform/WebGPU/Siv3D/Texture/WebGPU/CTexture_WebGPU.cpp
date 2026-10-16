@@ -308,6 +308,11 @@ namespace s3d
 		return m_textures.add(std::move(texture), info);
 	}
 
+	detail::TextureAtlasRegionData CTexture_WebGPU::getAtlasRegion(const Texture&, const Rect&)
+	{
+		return {};
+	}
+
 	void CTexture_WebGPU::release(const Texture::IDType handleID)
 	{
 		m_textures.erase(handleID);

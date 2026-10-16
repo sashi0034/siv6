@@ -91,6 +91,11 @@ namespace s3d
 		return Texture::IDType::NullAsset();
 	}
 
+	detail::TextureAtlasRegionData CTexture_Metal::getAtlasRegion(const Texture&, const Rect&)
+	{
+		return {};
+	}
+
 	void CTexture_Metal::release(Texture::IDType handleID)
 	{
 

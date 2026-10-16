@@ -299,6 +299,11 @@ namespace s3d
 		return m_textures.add(std::move(texture), info);
 	}
 
+	detail::TextureAtlasRegionData CTexture_GL4::getAtlasRegion(const Texture&, const Rect&)
+	{
+		return {};
+	}
+
 	void CTexture_GL4::release(const Texture::IDType handleID)
 	{
 		m_textures.erase(handleID);

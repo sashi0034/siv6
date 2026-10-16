@@ -64,6 +64,9 @@ namespace s3d
 		bool hasDepth() const noexcept;
 
 		[[nodiscard]]
+		bool isDefault() const noexcept;
+
+		[[nodiscard]]
 		ID3D11Texture2D* getTexture();
 
 		[[nodiscard]]

@@ -559,6 +559,11 @@ namespace s3d
 		return m_hasDepth;
 	}
 
+	bool D3D11Texture::isDefault() const noexcept
+	{
+		return (m_type == TextureType::Default);
+	}
+
 	ID3D11Texture2D* D3D11Texture::getTexture()
 	{
 		return m_texture.Get();

@@ -19,6 +19,8 @@
 
 namespace s3d
 {
+	class D3D11TextureAtlas;
+
 	class CTexture_D3D11 final : public ISiv3DTexture
 	{
 	private:
@@ -33,6 +35,9 @@ namespace s3d
 
 		// Texture の管理
 		AssetHandleManager<Texture::IDType, D3D11Texture> m_textures{ U"Texture" };
+
+		// テクスチャアトラス
+		std::unique_ptr<D3D11TextureAtlas> m_atlas;
 
 		// マルチサンプルの対応
 		std::array<bool, 11> m_multiSampleAvailable = {};
@@ -68,6 +73,10 @@ namespace s3d
 		Texture::IDType createRT(const Grid<Float4>& image, HasDepth hasDepth, HasMipMap hasMipMap) override;
 
 		Texture::IDType createMSRT(const Size& size, const TextureFormat& format, HasDepth hasDepth, HasMipMap hasMipMap) override;
+
+		detail::TextureAtlasRegionData getAtlasRegion(const Texture& texture, const Rect& textureRegion) override;
+
+		void flushAtlasUploads();
 
 		void release(Texture::IDType handleID) override;
 

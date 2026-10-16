@@ -221,6 +221,30 @@ namespace s3d
 		[[nodiscard]]
 		TextureRegion operator ()(const RectF& rect) const;
 
+		/// @brief 指定した領域をテクスチャアトラス経由で描画する TextureRegion を返します。
+		/// @param x 元テクスチャ上の領域の左上 X 座標（ピクセル）
+		/// @param y 元テクスチャ上の領域の左上 Y 座標（ピクセル）
+		/// @param w 領域の幅（ピクセル）
+		/// @param h 領域の高さ（ピクセル）
+		/// @return テクスチャアトラス上の領域。アトラス化できない場合は元テクスチャ上の領域
+		[[nodiscard]]
+		TextureRegion atlas(int32 x, int32 y, int32 w, int32 h) const;
+
+		[[nodiscard]]
+		TextureRegion atlas(const Point& xy, int32 w, int32 h) const;
+
+		[[nodiscard]]
+		TextureRegion atlas(int32 x, int32 y, int32 size) const;
+
+		[[nodiscard]]
+		TextureRegion atlas(int32 x, int32 y, const Size& size) const;
+
+		[[nodiscard]]
+		TextureRegion atlas(const Point& xy, const Size& size) const;
+
+		[[nodiscard]]
+		TextureRegion atlas(const Rect& textureRegion) const;
+
 		[[nodiscard]]
 		TextureRegion uv(double u, double v, double w, double h) const;
 

@@ -431,6 +431,49 @@ namespace s3d
 		return operator ()(rect.x, rect.y, rect.w, rect.h);
 	}
 
+	TextureRegion Texture::atlas(const int32 x, const int32 y, const int32 w, const int32 h) const
+	{
+		return atlas(Rect{ x, y, w, h });
+	}
+
+	TextureRegion Texture::atlas(const Point& xy, const int32 w, const int32 h) const
+	{
+		return atlas(Rect{ xy, w, h });
+	}
+
+	TextureRegion Texture::atlas(const int32 x, const int32 y, const int32 size) const
+	{
+		return atlas(Rect{ x, y, size });
+	}
+
+	TextureRegion Texture::atlas(const int32 x, const int32 y, const Size& size) const
+	{
+		return atlas(Rect{ x, y, size });
+	}
+
+	TextureRegion Texture::atlas(const Point& xy, const Size& size) const
+	{
+		return atlas(Rect{ xy, size });
+	}
+
+	TextureRegion Texture::atlas(const Rect& textureRegion) const
+	{
+		detail::TextureAtlasRegionData atlasRegion = SIV3D_ENGINE(Texture)->getAtlasRegion(*this, textureRegion);
+
+		if (not atlasRegion.textureHandle)
+		{
+			return operator ()(textureRegion.x, textureRegion.y, textureRegion.w, textureRegion.h);
+		}
+
+		Texture atlasTexture = *this;
+		atlasTexture.m_handle = std::move(atlasRegion.textureHandle);
+		return atlasTexture(
+			atlasRegion.textureRegion.x,
+			atlasRegion.textureRegion.y,
+			atlasRegion.textureRegion.w,
+			atlasRegion.textureRegion.h);
+	}
+
 	TextureRegion Texture::uv(const double u, const double v, const double w, const double h) const
 	{
 		const Size size = SIV3D_ENGINE(Texture)->getSize(m_handle->id());
